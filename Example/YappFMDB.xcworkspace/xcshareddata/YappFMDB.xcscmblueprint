@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "3C62F3E03E1285B0F4D09A391D17839CF48BF766",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "C11F922238BB38234E819EB903319F8A36717CC1" : 0,
+    "3C62F3E03E1285B0F4D09A391D17839CF48BF766" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "54DC2DEE-75CB-472D-8CF5-BA29A0592B67",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "C11F922238BB38234E819EB903319F8A36717CC1" : "",
+    "3C62F3E03E1285B0F4D09A391D17839CF48BF766" : "YappFMDB\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "YappFMDB",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/YappFMDB.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:yappbox\/YappFMDB.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3C62F3E03E1285B0F4D09A391D17839CF48BF766"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:yappbox\/projects.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C11F922238BB38234E819EB903319F8A36717CC1"
+    }
+  ]
+}
