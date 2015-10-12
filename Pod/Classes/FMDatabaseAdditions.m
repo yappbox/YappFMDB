@@ -9,6 +9,7 @@
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
 #import "TargetConditionals.h"
+#import <sqlite3.h>
 
 @interface FMDatabase (PrivateStuff)
 - (FMResultSet *)executeQuery:(NSString *)sql withArgumentsInArray:(NSArray*)arrayArgs orDictionary:(NSDictionary *)dictionaryArgs orVAList:(va_list)args;
@@ -190,16 +191,6 @@ return ret;
     [rs next];
     [rs close];
 }
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
-
-- (BOOL)columnExists:(NSString*)tableName columnName:(NSString*)columnName __attribute__ ((deprecated)) {
-    return [self columnExists:columnName inTableWithName:tableName];
-}
-
-#pragma clang diagnostic pop
-
 
 - (BOOL)validateSQL:(NSString*)sql error:(NSError**)error {
     sqlite3_stmt *pStmt = NULL;

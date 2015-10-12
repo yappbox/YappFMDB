@@ -1,6 +1,7 @@
 #import "FMDatabase.h"
 #import "unistd.h"
 #import <objc/runtime.h>
+#import <sqlite3.h>
 
 @interface FMDatabase ()
 
@@ -19,7 +20,7 @@
 #pragma mark FMDatabase instantiation and deallocation
 
 + (instancetype)databaseWithPath:(NSString*)aPath {
-    return FMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
+    return [[self alloc] initWithPath:aPath];
 }
 
 - (instancetype)init {
@@ -51,15 +52,6 @@
 
 - (void)dealloc {
     [self close];
-    FMDBRelease(_openResultSets);
-    FMDBRelease(_cachedStatements);
-    FMDBRelease(_dateFormat);
-    FMDBRelease(_databasePath);
-    FMDBRelease(_openFunctions);
-    
-#if ! __has_feature(objc_arc)
-    [super dealloc];
-#endif
 }
 
 - (NSString *)databasePath {
@@ -149,10 +141,10 @@
     return YES;
 }
 
-#if SQLITE_VERSION_NUMBER >= 3005000
 - (BOOL)openWithFlags:(int)flags {
     return [self openWithFlags:flags vfs:nil];
 }
+
 - (BOOL)openWithFlags:(int)flags vfs:(NSString *)vfsName {
     if (_db) {
         return YES;
@@ -171,8 +163,6 @@
     
     return YES;
 }
-#endif
-
 
 - (BOOL)close {
     
@@ -291,7 +281,7 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
 - (void)closeOpenResultSets {
     
     //Copy the set so we don't get mutation errors
-    NSSet *openSetCopy = FMDBReturnAutoreleased([_openResultSets copy]);
+    NSSet *openSetCopy = [_openResultSets copy];
     for (NSValue *rsInWrappedInATastyValueMeal in openSetCopy) {
         FMResultSet *rs = (FMResultSet *)[rsInWrappedInATastyValueMeal pointerValue];
         
@@ -345,8 +335,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
     [statements addObject:statement];
     
     [_cachedStatements setObject:statements forKey:query];
-    
-    FMDBRelease(query);
 }
 
 #pragma mark Key routines
@@ -402,10 +390,10 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
 
 + (NSDateFormatter *)storeableDateFormat:(NSString *)format {
     
-    NSDateFormatter *result = FMDBReturnAutoreleased([[NSDateFormatter alloc] init]);
+    NSDateFormatter *result = [[NSDateFormatter alloc] init];
     result.dateFormat = format;
     result.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:0];
-    result.locale = FMDBReturnAutoreleased([[NSLocale alloc] initWithLocaleIdentifier:@"en_US"]);
+    result.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     return result;
 }
 
@@ -415,8 +403,7 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
 }
 
 - (void)setDateFormat:(NSDateFormatter *)format {
-    FMDBAutorelease(_dateFormat);
-    _dateFormat = FMDBReturnRetained(format);
+    _dateFormat = format;
 }
 
 - (NSDate *)dateFromString:(NSString *)s {
@@ -803,8 +790,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
             // Get the index for the parameter name.
             int namedIdx = sqlite3_bind_parameter_index(pStmt, [parameterName UTF8String]);
             
-            FMDBRelease(parameterName);
-            
             if (namedIdx > 0) {
                 // Standard binding from here.
                 [self bindObject:[dictionaryArgs objectForKey:dictionaryKey] toColumn:namedIdx inStatement:pStmt];
@@ -853,8 +838,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
         return nil;
     }
     
-    FMDBRetain(statement); // to balance the release below
-    
     if (!statement) {
         statement = [[FMStatement alloc] init];
         [statement setStatement:pStmt];
@@ -872,8 +855,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
     [_openResultSets addObject:openResultSet];
     
     [statement setUseCount:[statement useCount] + 1];
-    
-    FMDBRelease(statement); 
     
     _isExecutingStatement = NO;
     
@@ -984,8 +965,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
             // Get the index for the parameter name.
             int namedIdx = sqlite3_bind_parameter_index(pStmt, [parameterName UTF8String]);
             
-            FMDBRelease(parameterName);
-            
             if (namedIdx > 0) {
                 // Standard binding from here.
                 [self bindObject:[dictionaryArgs objectForKey:dictionaryKey] toColumn:namedIdx inStatement:pStmt];
@@ -1076,8 +1055,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
         [cachedStmt setStatement:pStmt];
         
         [self setCachedStatement:cachedStmt forQuery:sql];
-        
-        FMDBRelease(cachedStmt);
     }
     
     int closeErrorCode;
@@ -1192,9 +1169,6 @@ int FMDBExecuteBulkSQLCallback(void *theBlockAsVoid, int columns, char **values,
     return result;
 }
 
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
 - (BOOL)update:(NSString*)sql withErrorAndBindings:(NSError**)outErr, ... {
     va_list args;
     va_start(args, outErr);
@@ -1204,8 +1178,6 @@ int FMDBExecuteBulkSQLCallback(void *theBlockAsVoid, int columns, char **values,
     va_end(args);
     return result;
 }
-
-#pragma clang diagnostic pop
 
 #pragma mark Transactions
 
@@ -1252,8 +1224,6 @@ int FMDBExecuteBulkSQLCallback(void *theBlockAsVoid, int columns, char **values,
 - (BOOL)inTransaction {
     return _inTransaction;
 }
-
-#if SQLITE_VERSION_NUMBER >= 3007000
 
 static NSString *FMDBEscapeSavePointName(NSString *savepointName) {
     return [savepointName stringByReplacingOccurrencesOfString:@"'" withString:@"''"];
@@ -1331,8 +1301,6 @@ static NSString *FMDBEscapeSavePointName(NSString *savepointName) {
     return err;
 }
 
-#endif
-
 #pragma mark Cache statements
 
 - (BOOL)shouldCacheStatements {
@@ -1373,7 +1341,7 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
         _openFunctions = [NSMutableSet new];
     }
     
-    id b = FMDBReturnAutoreleased([block copy]);
+    id b = [block copy];
     
     [_openFunctions addObject:b];
     
@@ -1402,10 +1370,6 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
 
 - (void)dealloc {
     [self close];
-    FMDBRelease(_query);
-#if ! __has_feature(objc_arc)
-    [super dealloc];
-#endif
 }
 
 - (void)close {

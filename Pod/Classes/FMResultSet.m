@@ -1,6 +1,7 @@
 #import "FMResultSet.h"
 #import "FMDatabase.h"
-#import "unistd.h"
+#import <unistd.h>
+#import <sqlite3.h>
 
 @interface FMDatabase ()
 - (void)resultSetDidClose:(FMResultSet *)resultSet;
@@ -21,7 +22,7 @@
     NSParameterAssert(![statement inUse]);
     [statement setInUse:YES]; // weak reference
     
-    return FMDBReturnAutoreleased(rs);
+    return rs;
 }
 
 - (void)finalize {
@@ -31,21 +32,10 @@
 
 - (void)dealloc {
     [self close];
-    
-    FMDBRelease(_query);
-    _query = nil;
-    
-    FMDBRelease(_columnNameToIndexMap);
-    _columnNameToIndexMap = nil;
-    
-#if ! __has_feature(objc_arc)
-    [super dealloc];
-#endif
 }
 
 - (void)close {
     [_statement reset];
-    FMDBRelease(_statement);
     _statement = nil;
     
     // we don't need this anymore... (i think)
@@ -89,34 +79,6 @@
     }
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-implementations"
-
-- (NSDictionary*)resultDict {
-    
-    NSUInteger num_cols = (NSUInteger)sqlite3_data_count([_statement statement]);
-    
-    if (num_cols > 0) {
-        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithCapacity:num_cols];
-        
-        NSEnumerator *columnNames = [[self columnNameToIndexMap] keyEnumerator];
-        NSString *columnName = nil;
-        while ((columnName = [columnNames nextObject])) {
-            id objectValue = [self objectForColumnName:columnName];
-            [dict setObject:objectValue forKey:columnName];
-        }
-        
-        return FMDBReturnAutoreleased([dict copy]);
-    }
-    else {
-        NSLog(@"Warning: There seem to be no columns in this set.");
-    }
-    
-    return nil;
-}
-
-#pragma clang diagnostic pop
-
 - (NSDictionary*)resultDictionary {
     
     NSUInteger num_cols = (NSUInteger)sqlite3_data_count([_statement statement]);
@@ -142,9 +104,6 @@
     
     return nil;
 }
-
-
-
 
 - (BOOL)next {
     return [self nextWithError:nil];

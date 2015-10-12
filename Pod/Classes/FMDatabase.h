@@ -1,43 +1,18 @@
 #import <Foundation/Foundation.h>
-#import "sqlite3.h"
 #import "FMResultSet.h"
 #import "FMDatabasePool.h"
 
-
-#if ! __has_feature(objc_arc)
-    #define FMDBAutorelease(__v) ([__v autorelease]);
-    #define FMDBReturnAutoreleased FMDBAutorelease
-
-    #define FMDBRetain(__v) ([__v retain]);
-    #define FMDBReturnRetained FMDBRetain
-
-    #define FMDBRelease(__v) ([__v release]);
-
-    #define FMDBDispatchQueueRelease(__v) (dispatch_release(__v));
-#else
-    // -fobjc-arc
-    #define FMDBAutorelease(__v)
-    #define FMDBReturnAutoreleased(__v) (__v)
-
-    #define FMDBRetain(__v)
-    #define FMDBReturnRetained(__v) (__v)
-
-    #define FMDBRelease(__v)
-
-// If OS_OBJECT_USE_OBJC=1, then the dispatch objects will be treated like ObjC objects
-// and will participate in ARC.
-// See the section on "Dispatch Queues and Automatic Reference Counting" in "Grand Central Dispatch (GCD) Reference" for details. 
-    #if OS_OBJECT_USE_OBJC
-        #define FMDBDispatchQueueRelease(__v)
-    #else
-        #define FMDBDispatchQueueRelease(__v) (dispatch_release(__v));
-    #endif
-#endif
-
-#if !__has_feature(objc_instancetype)
-    #define instancetype id
-#endif
-
+// since this is a framework these need to be forward declarations
+// since sqlite3 does not have a public module header
+struct sqlite3;
+struct sqlite3_stmt;
+struct sqlite3_context;
+struct Mem;
+typedef struct sqlite3 sqlite3;
+typedef struct sqlite3_stmt sqlite3_stmt;
+typedef struct sqlite3_context sqlite3_context;
+typedef struct Mem sqlite3_value;
+typedef long long int sqlite_int64;
 
 typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary);
 
@@ -66,11 +41,6 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
  @warning Do not instantiate a single `FMDatabase` object and use it across multiple threads. Instead, use `<FMDatabaseQueue>`.
 
  */
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wobjc-interface-ivars"
-
-
 @interface FMDatabase : NSObject  {
     
     sqlite3*            _db;
@@ -219,10 +189,8 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
  @see close
  */
 
-#if SQLITE_VERSION_NUMBER >= 3005000
 - (BOOL)openWithFlags:(int)flags;
 - (BOOL)openWithFlags:(int)flags vfs:(NSString *)vfsName;
-#endif
 
 /** Closing a database connection
  
@@ -273,15 +241,6 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
  */
 
 - (BOOL)executeUpdate:(NSString*)sql withErrorAndBindings:(NSError**)outErr, ...;
-
-/** Execute single update statement
- 
- @see executeUpdate:withErrorAndBindings:
- 
- @warning **Deprecated**: Please use `<executeUpdate:withErrorAndBindings>` instead.
- */
-
-- (BOOL)update:(NSString*)sql withErrorAndBindings:(NSError**)outErr, ... __attribute__ ((deprecated));
 
 /** Execute single update statement
 
@@ -794,8 +753,6 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
 - (NSTimeInterval)maxBusyRetryTimeInterval;
 
 
-#if SQLITE_VERSION_NUMBER >= 3007000
-
 ///------------------
 /// @name Save points
 ///------------------
@@ -856,8 +813,6 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
  */
 
 - (NSError*)inSavePoint:(void (^)(BOOL *rollback))block;
-
-#endif
 
 ///----------------------------
 /// @name SQLite library status
@@ -1081,6 +1036,3 @@ typedef int(^FMDBExecuteStatementsCallbackBlock)(NSDictionary *resultsDictionary
 - (void)reset;
 
 @end
-
-#pragma clang diagnostic pop
-

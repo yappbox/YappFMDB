@@ -8,6 +8,7 @@
 
 #import "FMDatabasePool.h"
 #import "FMDatabase.h"
+#import <sqlite3.h>
 
 @interface FMDatabasePool()
 
@@ -25,11 +26,11 @@
 
 
 + (instancetype)databasePoolWithPath:(NSString*)aPath {
-    return FMDBReturnAutoreleased([[self alloc] initWithPath:aPath]);
+    return [[self alloc] initWithPath:aPath];
 }
 
 + (instancetype)databasePoolWithPath:(NSString*)aPath flags:(int)openFlags {
-    return FMDBReturnAutoreleased([[self alloc] initWithPath:aPath flags:openFlags]);
+    return [[self alloc] initWithPath:aPath flags:openFlags];
 }
 
 - (instancetype)initWithPath:(NSString*)aPath flags:(int)openFlags {
@@ -39,8 +40,8 @@
     if (self != nil) {
         _path               = [aPath copy];
         _lockQueue          = dispatch_queue_create([[NSString stringWithFormat:@"fmdb.%@", self] UTF8String], NULL);
-        _databaseInPool     = FMDBReturnRetained([NSMutableArray array]);
-        _databaseOutPool    = FMDBReturnRetained([NSMutableArray array]);
+        _databaseInPool     = [NSMutableArray array];
+        _databaseOutPool    = [NSMutableArray array];
         _openFlags          = openFlags;
     }
     
@@ -56,24 +57,6 @@
 - (instancetype)init {
     return [self initWithPath:nil];
 }
-
-
-- (void)dealloc {
-    
-    _delegate = 0x00;
-    FMDBRelease(_path);
-    FMDBRelease(_databaseInPool);
-    FMDBRelease(_databaseOutPool);
-    
-    if (_lockQueue) {
-        FMDBDispatchQueueRelease(_lockQueue);
-        _lockQueue = 0x00;
-    }
-#if ! __has_feature(objc_arc)
-    [super dealloc];
-#endif
-}
-
 
 - (void)executeLocked:(void (^)(void))aBlock {
     dispatch_sync(_lockQueue, aBlock);
@@ -127,11 +110,8 @@
         }
         
         //This ensures that the db is opened before returning
-#if SQLITE_VERSION_NUMBER >= 3005000
         BOOL success = [db openWithFlags:self->_openFlags];
-#else
-        BOOL success = [db open];
-#endif
+
         if (success) {
             if ([self->_delegate respondsToSelector:@selector(databasePool:shouldAddDatabaseToPool:)] && ![self->_delegate databasePool:self shouldAddDatabaseToPool:db]) {
                 [db close];

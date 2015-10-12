@@ -178,22 +178,6 @@
 
 - (BOOL)columnExists:(NSString*)columnName inTableWithName:(NSString*)tableName;
 
-/** Test to see if particular column exists for particular table in database
-
- @param columnName The name of the column.
-
- @param tableName The name of the table.
-
- @return `YES` if column exists in table in question; `NO` otherwise.
- 
- @see columnExists:inTableWithName:
- 
- @warning Deprecated - use `<columnExists:inTableWithName:>` instead.
- */
-
-- (BOOL)columnExists:(NSString*)tableName columnName:(NSString*)columnName __attribute__ ((deprecated));
-
-
 /** Validate SQL statement
  
  This validates SQL statement by performing `sqlite3_prepare_v2`, but not returning the results, but instead immediately calling `sqlite3_finalize`.
@@ -207,9 +191,6 @@
  */
 
 - (BOOL)validateSQL:(NSString*)sql error:(NSError**)error;
-
-
-#if SQLITE_VERSION_NUMBER >= 3007017
 
 ///-----------------------------------
 /// @name Application identifier tasks
@@ -252,8 +233,6 @@
  */
 
 - (void)setApplicationIDString:(NSString*)string;
-#endif
-
 #endif
 
 ///-----------------------------------

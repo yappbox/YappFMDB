@@ -7,15 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01741AD71BCC5C2D0040FB56 /* FMDatabaseAdditionsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01741AD61BCC5C2D0040FB56 /* FMDatabaseAdditionsTests.m */; settings = {ASSET_TAGS = (); }; };
+		01F133031BCC30E10051C1C5 /* FMDatabasePoolTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F133001BCC30E10051C1C5 /* FMDatabasePoolTests.m */; settings = {ASSET_TAGS = (); }; };
+		01F133041BCC30E10051C1C5 /* FMDatabaseQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F133011BCC30E10051C1C5 /* FMDatabaseQueueTests.m */; settings = {ASSET_TAGS = (); }; };
+		01F133051BCC30E10051C1C5 /* FMDatabaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F133021BCC30E10051C1C5 /* FMDatabaseTests.m */; settings = {ASSET_TAGS = (); }; };
+		01F133081BCC31180051C1C5 /* FMDBTempDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01F133071BCC31180051C1C5 /* FMDBTempDBTests.m */; settings = {ASSET_TAGS = (); }; };
+		01F1330A1BCC333C0051C1C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 01F133091BCC333C0051C1C5 /* libsqlite3.tbd */; };
 		248085ACD48B99DA459904F1 /* Pods_YappFMDB_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E088C4BFF7ADDEFE8A32B8A2 /* Pods_YappFMDB_Tests.framework */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01741AD61BCC5C2D0040FB56 /* FMDatabaseAdditionsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditionsTests.m; sourceTree = "<group>"; };
+		01F133001BCC30E10051C1C5 /* FMDatabasePoolTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePoolTests.m; sourceTree = "<group>"; };
+		01F133011BCC30E10051C1C5 /* FMDatabaseQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueueTests.m; sourceTree = "<group>"; };
+		01F133021BCC30E10051C1C5 /* FMDatabaseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseTests.m; sourceTree = "<group>"; };
+		01F133061BCC31180051C1C5 /* FMDBTempDBTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTempDBTests.h; sourceTree = "<group>"; };
+		01F133071BCC31180051C1C5 /* FMDBTempDBTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTempDBTests.m; sourceTree = "<group>"; };
+		01F133091BCC333C0051C1C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		554925ED55C0DABE82C38B80 /* YappFMDB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YappFMDB.podspec; path = ../YappFMDB.podspec; sourceTree = "<group>"; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -24,7 +36,6 @@
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		63105AFFE9B74628AF3F0C91 /* Pods-YappFMDB_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YappFMDB_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YappFMDB_Tests/Pods-YappFMDB_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6EE3DF6658C10536AB7D74F5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -38,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01F1330A1BCC333C0051C1C5 /* libsqlite3.tbd in Frameworks */,
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
@@ -79,6 +91,7 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				01F133091BCC333C0051C1C5 /* libsqlite3.tbd */,
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
@@ -91,7 +104,12 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
+				01741AD61BCC5C2D0040FB56 /* FMDatabaseAdditionsTests.m */,
+				01F133001BCC30E10051C1C5 /* FMDatabasePoolTests.m */,
+				01F133011BCC30E10051C1C5 /* FMDatabaseQueueTests.m */,
+				01F133021BCC30E10051C1C5 /* FMDatabaseTests.m */,
+				01F133061BCC31180051C1C5 /* FMDBTempDBTests.h */,
+				01F133071BCC31180051C1C5 /* FMDBTempDBTests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -237,7 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				01F133031BCC30E10051C1C5 /* FMDatabasePoolTests.m in Sources */,
+				01741AD71BCC5C2D0040FB56 /* FMDatabaseAdditionsTests.m in Sources */,
+				01F133041BCC30E10051C1C5 /* FMDatabaseQueueTests.m in Sources */,
+				01F133051BCC30E10051C1C5 /* FMDatabaseTests.m in Sources */,
+				01F133081BCC31180051C1C5 /* FMDBTempDBTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +310,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -321,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -332,11 +354,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EF4849F9D932073DD42C2CD6 /* Pods-YappFMDB_Tests.debug.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -355,11 +372,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63105AFFE9B74628AF3F0C91 /* Pods-YappFMDB_Tests.release.xcconfig */;
 			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
