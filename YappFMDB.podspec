@@ -9,24 +9,24 @@
 Pod::Spec.new do |s|
   s.name             = "YappFMDB"
   s.version          = "0.1.0"
-  s.summary          = "A short description of YappFMDB."
+  s.summary          = "A framework friendly fork of FMDB."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-                       DESC
+    A fork of FMDB that is use_frameworks friendly, removes deprecations
+    and non arc support and <3.5 sqlite support.
+  DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/YappFMDB"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "https://github.com/yappbox/YappFMDB"
   s.license          = 'MIT'
-  s.author           = { "Kris Selden" => "kris.selden@gmail.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/YappFMDB.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = {
+    "Kris Selden" => "kris.selden@gmail.com"
+  }
+  s.source           = {
+    :git => "https://github.com/yappbox/YappFMDB.git",
+    :tag => s.version.to_s
+  }
 
-  s.platform     = :ios, '7.0'
+  s.platform     = :ios, '8.0'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
@@ -34,7 +34,5 @@ Pod::Spec.new do |s|
     'YappFMDB' => ['Pod/Assets/*.png']
   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'Pod/Classes/FMDB.h'
 end
