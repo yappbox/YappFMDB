@@ -28,11 +28,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
+  s.library   = 'sqlite3'
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'YappFMDB' => ['Pod/Assets/*.png']
-  }
-
-  s.public_header_files = 'Pod/Classes/FMDB.h'
 end

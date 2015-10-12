@@ -16,11 +16,6 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "source_files": "Pod/Classes/**/*",
-  "resource_bundles": {
-    "YappFMDB": [
-      "Pod/Assets/*.png"
-    ]
-  },
-  "public_header_files": "Pod/Classes/FMDB.h"
+  "libraries": "sqlite3",
+  "source_files": "Pod/Classes/**/*"
 }
