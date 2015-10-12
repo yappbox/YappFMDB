@@ -1,0 +1,6 @@
+framework module YappFMDB {
+  umbrella header "YappFMDB-umbrella.h"
+
+  export *
+  module * { export * }
+}

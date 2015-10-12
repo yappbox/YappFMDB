@@ -1,0 +1,14 @@
+PODS:
+  - YappFMDB (0.1.0)
+
+DEPENDENCIES:
+  - YappFMDB (from `../`)
+
+EXTERNAL SOURCES:
+  YappFMDB:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  YappFMDB: 7c2d84638210740b4308f13789a00746f4e2fc68
+
+COCOAPODS: 0.39.0
