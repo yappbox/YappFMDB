@@ -101,15 +101,4 @@
     XCTAssertTrue([[self db] userVersion] == 12);
 }
 
-- (void)testApplicationID
-{
-    uint32_t appID = 123456789;
-    
-    [self.db setApplicationID:appID];
-    
-    uint32_t rAppID = [self.db applicationID];
-    
-    XCTAssertEqual(rAppID, appID);
-}
-
 @end

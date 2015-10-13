@@ -8,7 +8,6 @@
 
 #import "FMDatabase.h"
 #import "FMDatabaseAdditions.h"
-#import "TargetConditionals.h"
 #import <sqlite3.h>
 
 @interface FMDatabase (PrivateStuff)
@@ -117,28 +116,6 @@ return ret;
     [rs close];
     
     return returnBool;
-}
-
-- (uint32_t)applicationID {
-    
-    uint32_t r = 0;
-    
-    FMResultSet *rs = [self executeQuery:@"pragma application_id"];
-    
-    if ([rs next]) {
-        r = (uint32_t)[rs longLongIntForColumnIndex:0];
-    }
-    
-    [rs close];
-    
-    return r;
-}
-
-- (void)setApplicationID:(uint32_t)appID {
-    NSString *query = [NSString stringWithFormat:@"pragma application_id=%d", appID];
-    FMResultSet *rs = [self executeQuery:query];
-    [rs next];
-    [rs close];
 }
 
 - (uint32_t)userVersion {

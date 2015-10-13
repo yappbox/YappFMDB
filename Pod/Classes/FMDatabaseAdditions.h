@@ -192,48 +192,6 @@
 
 - (BOOL)validateSQL:(NSString*)sql error:(NSError**)error;
 
-///-----------------------------------
-/// @name Application identifier tasks
-///-----------------------------------
-
-/** Retrieve application ID
- 
- @return The `uint32_t` numeric value of the application ID.
- 
- @see setApplicationID:
- */
-
-- (uint32_t)applicationID;
-
-/** Set the application ID
-
- @param appID The `uint32_t` numeric value of the application ID.
- 
- @see applicationID
- */
-
-- (void)setApplicationID:(uint32_t)appID;
-
-#if TARGET_OS_MAC && !TARGET_OS_IPHONE
-/** Retrieve application ID string
-
- @return The `NSString` value of the application ID.
-
- @see setApplicationIDString:
- */
-
-
-- (NSString*)applicationIDString;
-
-/** Set the application ID string
-
- @param string The `NSString` value of the application ID.
-
- @see applicationIDString
- */
-
-- (void)setApplicationIDString:(NSString*)string;
-#endif
 
 ///-----------------------------------
 /// @name user version identifier tasks
