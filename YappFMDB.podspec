@@ -28,7 +28,11 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
-  s.library   = 'sqlite3'
+
+  # earlier xcode broke .tbd linking
+  #s.library   = 'sqlite3'
+
+  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-lsqlite3' }
 
   s.source_files = 'Pod/Classes/**/*'
 end
