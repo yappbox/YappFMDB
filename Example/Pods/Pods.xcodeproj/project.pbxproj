@@ -8,22 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		0571358727E6BEC930D62F077F2AC528 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		1019A627B3FFA794C58E6C0457579267 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7B3CA80C62E2683D3AF9FF65A4EDFC /* FMDatabaseAdditions.m */; };
+		1019A627B3FFA794C58E6C0457579267 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA89EFC36ABFC5E652846462939E7D6 /* FMDatabaseAdditions.m */; };
 		578B32EFBAD227DE679D249316F49F4D /* YappFMDB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F02788F20AC389499F5EE48F2969AD /* YappFMDB-dummy.m */; };
-		635972FD499BE249075EEC290A700E57 /* YappFMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAF054B5712DEF9B3A7D27508F57C51 /* YappFMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6A26C66ABE45C8D338ED4002DF2583F3 /* FMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = 96BB76D8FE3CB74F4E51942F5467ED46 /* FMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7353B155187813E99ED48E7825CA8987 /* Pods-YappFMDB_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 356DAFB5E53B128E35E7EE5A1B963EDD /* Pods-YappFMDB_Tests-dummy.m */; };
-		790A7684B47FE6C67E16D2E97C65DC17 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = BECEEB3BD788A80C0966296A346F6FDB /* FMDatabaseQueue.m */; };
-		795E5C6506E5899FA59359C31D162EAE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = BB006B3C181B34DAC5E87FE49B49FAC7 /* FMDatabase.m */; };
-		8EDB6D00CC83862B5ED311B11B35787C /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 60DEDEBDD764744D5D8343F3C522CC9F /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8F9038F50698BFF66F1EB4DDC113728D /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CB5135175BB3EC1C67847F063498B92 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9C191E25D57B5E6C5FB6EB3AB19DE7DE /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = AD858BDE7DDB1E9ABF645525214DA63E /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A774EFF401D1C5C92FC77D88F2E58F43 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5F704E62CDA91861BA6EEC70A15FE7 /* FMDatabasePool.m */; };
+		790A7684B47FE6C67E16D2E97C65DC17 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B4282188C0FD1802A4A0445578106EAA /* FMDatabaseQueue.m */; };
+		795E5C6506E5899FA59359C31D162EAE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 860F84072FC4A442A28DB5A810E8F549 /* FMDatabase.m */; };
+		7EC736595958B7FA7923CC4853855619 /* FMDatabase.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C36362B6DDF9A66BB36D247349C8A01 /* FMDatabase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8BD84B30D89C365AE656FE55D9DBDAAF /* YappFMDB-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DAF054B5712DEF9B3A7D27508F57C51 /* YappFMDB-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A774EFF401D1C5C92FC77D88F2E58F43 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E736625AB45627AD38423D41BF941 /* FMDatabasePool.m */; };
+		A8E81619E45E7EA43CB60EAF6C8BF52B /* FMDatabasePool.h in Headers */ = {isa = PBXBuildFile; fileRef = F1CE411668048FF312E7223E17C5AAC3 /* FMDatabasePool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF6A4CFA39D9AB1E134E385D8F24BAD8 /* FMDatabaseQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FE43F48340686146F33F6AF87FEA891 /* FMDatabaseQueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3C1441E06EE54B342920851538BFA2D /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C19FBFB615F7B2923881D8C4B8C9968 /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D56ADA9998CD17F5B9A37BB2BB901388 /* Pods-YappFMDB_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC53EBDF47ED34335BDECBF336F79F2 /* Pods-YappFMDB_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D6855EFB491DBD186B5E1BC041811F57 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 749EC54FF9ACA62B4BC7F3067FF8E9BE /* FMResultSet.m */; };
-		F304EC9E12383E3A8A9C5C8555A0ED49 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = F06DA855FF991B8D9D9D2DAD7FAB6101 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D6855EFB491DBD186B5E1BC041811F57 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 85F968D2923211C01B33C79274F6D111 /* FMResultSet.m */; };
+		F76E38DCB4207FA207BDDE8F5046ACF4 /* FMResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = CC02E126335345E548CF477CA3AF6882 /* FMResultSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA116996CEB8096708E592B14333CA44 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		FCD8AD5A305634A5E69564C86EA9063D /* FMDatabaseAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 023B771B26FDF5166B72000516DFE14C /* FMDatabaseAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,37 +36,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		023B771B26FDF5166B72000516DFE14C /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		0FE43F48340686146F33F6AF87FEA891 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		1C36362B6DDF9A66BB36D247349C8A01 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		2758D1305F0D041E64EEB61078814697 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E5E736625AB45627AD38423D41BF941 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		356DAFB5E53B128E35E7EE5A1B963EDD /* Pods-YappFMDB_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-YappFMDB_Tests-dummy.m"; sourceTree = "<group>"; };
 		3B138B0B071897277894DEE87D523D4A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C19FBFB615F7B2923881D8C4B8C9968 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3E7B3CA80C62E2683D3AF9FF65A4EDFC /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		45F02788F20AC389499F5EE48F2969AD /* YappFMDB-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YappFMDB-dummy.m"; sourceTree = "<group>"; };
 		484A0BB30A8DAA811E2C732089ED7FED /* YappFMDB.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YappFMDB.xcconfig; sourceTree = "<group>"; };
 		49EDAF4C0EEFE1986A816A161B5016FB /* YappFMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YappFMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A19FBE0636BCD097D83F6285DC3BD58 /* Pods-YappFMDB_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-YappFMDB_Tests.modulemap"; sourceTree = "<group>"; };
 		60CB44E129AECA469E41E8DB8F457D45 /* Pods-YappFMDB_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YappFMDB_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		60DEDEBDD764744D5D8343F3C522CC9F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		61EC025BB0A89D93DFF460CBEA163014 /* Pods-YappFMDB_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YappFMDB_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		748DEF020BBFB741E8B7CCADEAF3B0DF /* Pods-YappFMDB_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-YappFMDB_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		749EC54FF9ACA62B4BC7F3067FF8E9BE /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		7C6131F4AAD975FF99BE9B04C17B50CA /* YappFMDB.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YappFMDB.modulemap; sourceTree = "<group>"; };
-		7CB5135175BB3EC1C67847F063498B92 /* FMDatabase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7DA89EFC36ABFC5E652846462939E7D6 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
 		7DAF054B5712DEF9B3A7D27508F57C51 /* YappFMDB-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YappFMDB-umbrella.h"; sourceTree = "<group>"; };
 		83C408F64D7475E103DB07948ABBA230 /* YappFMDB-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YappFMDB-prefix.pch"; sourceTree = "<group>"; };
-		96BB76D8FE3CB74F4E51942F5467ED46 /* FMDB.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		85F968D2923211C01B33C79274F6D111 /* FMResultSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		860F84072FC4A442A28DB5A810E8F549 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		A19B9A61E752C7B29D3DAE643FF77632 /* Pods-YappFMDB_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-YappFMDB_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		ABC53EBDF47ED34335BDECBF336F79F2 /* Pods-YappFMDB_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-YappFMDB_Tests-umbrella.h"; sourceTree = "<group>"; };
-		AD858BDE7DDB1E9ABF645525214DA63E /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 		B1F7DC4F797074787B15C40ED3B83826 /* Pods_YappFMDB_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YappFMDB_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4282188C0FD1802A4A0445578106EAA /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BB006B3C181B34DAC5E87FE49B49FAC7 /* FMDatabase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
-		BECEEB3BD788A80C0966296A346F6FDB /* FMDatabaseQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		CC02E126335345E548CF477CA3AF6882 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		CFE6B81CACCE108DC81A7B7F39F68A3D /* Pods-YappFMDB_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-YappFMDB_Tests-resources.sh"; sourceTree = "<group>"; };
 		DEF009F22BFD00CC4D6ED8DD5027B28F /* Pods-YappFMDB_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-YappFMDB_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EB5F704E62CDA91861BA6EEC70A15FE7 /* FMDatabasePool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
-		F06DA855FF991B8D9D9D2DAD7FAB6101 /* FMResultSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		F1CE411668048FF312E7223E17C5AAC3 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29B714670D8FAC62D2B7A71DB448AABD /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				89933EB0F691B5D1E249675FD850AEB1 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
 		33453FD131B40EF00732926849CAC907 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,37 +127,28 @@
 		85453983103B6387F02232E4FE666517 /* YappFMDB */ = {
 			isa = PBXGroup;
 			children = (
-				AC06AFD10A2115951E7CE760FB3AFBC4 /* Pod */,
+				29B714670D8FAC62D2B7A71DB448AABD /* Pod */,
 				EA3A51F3151B4CA6F14DB5CE8308F7D5 /* Support Files */,
 			);
 			name = YappFMDB;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		9988604ACB3F4F7357B57B9274696B07 /* Classes */ = {
+		89933EB0F691B5D1E249675FD850AEB1 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				7CB5135175BB3EC1C67847F063498B92 /* FMDatabase.h */,
-				BB006B3C181B34DAC5E87FE49B49FAC7 /* FMDatabase.m */,
-				023B771B26FDF5166B72000516DFE14C /* FMDatabaseAdditions.h */,
-				3E7B3CA80C62E2683D3AF9FF65A4EDFC /* FMDatabaseAdditions.m */,
-				AD858BDE7DDB1E9ABF645525214DA63E /* FMDatabasePool.h */,
-				EB5F704E62CDA91861BA6EEC70A15FE7 /* FMDatabasePool.m */,
-				60DEDEBDD764744D5D8343F3C522CC9F /* FMDatabaseQueue.h */,
-				BECEEB3BD788A80C0966296A346F6FDB /* FMDatabaseQueue.m */,
-				96BB76D8FE3CB74F4E51942F5467ED46 /* FMDB.h */,
-				F06DA855FF991B8D9D9D2DAD7FAB6101 /* FMResultSet.h */,
-				749EC54FF9ACA62B4BC7F3067FF8E9BE /* FMResultSet.m */,
+				1C36362B6DDF9A66BB36D247349C8A01 /* FMDatabase.h */,
+				860F84072FC4A442A28DB5A810E8F549 /* FMDatabase.m */,
+				3C19FBFB615F7B2923881D8C4B8C9968 /* FMDatabaseAdditions.h */,
+				7DA89EFC36ABFC5E652846462939E7D6 /* FMDatabaseAdditions.m */,
+				F1CE411668048FF312E7223E17C5AAC3 /* FMDatabasePool.h */,
+				2E5E736625AB45627AD38423D41BF941 /* FMDatabasePool.m */,
+				0FE43F48340686146F33F6AF87FEA891 /* FMDatabaseQueue.h */,
+				B4282188C0FD1802A4A0445578106EAA /* FMDatabaseQueue.m */,
+				CC02E126335345E548CF477CA3AF6882 /* FMResultSet.h */,
+				85F968D2923211C01B33C79274F6D111 /* FMResultSet.m */,
 			);
 			path = Classes;
-			sourceTree = "<group>";
-		};
-		AC06AFD10A2115951E7CE760FB3AFBC4 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				9988604ACB3F4F7357B57B9274696B07 /* Classes */,
-			);
-			path = Pod;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -213,17 +210,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		AE22E3006475E54E6300D7B6F53F4C12 /* Headers */ = {
+		3B1AE96982AD92F7A4FAA295D2826F42 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F9038F50698BFF66F1EB4DDC113728D /* FMDatabase.h in Headers */,
-				FCD8AD5A305634A5E69564C86EA9063D /* FMDatabaseAdditions.h in Headers */,
-				9C191E25D57B5E6C5FB6EB3AB19DE7DE /* FMDatabasePool.h in Headers */,
-				8EDB6D00CC83862B5ED311B11B35787C /* FMDatabaseQueue.h in Headers */,
-				6A26C66ABE45C8D338ED4002DF2583F3 /* FMDB.h in Headers */,
-				F304EC9E12383E3A8A9C5C8555A0ED49 /* FMResultSet.h in Headers */,
-				635972FD499BE249075EEC290A700E57 /* YappFMDB-umbrella.h in Headers */,
+				7EC736595958B7FA7923CC4853855619 /* FMDatabase.h in Headers */,
+				D3C1441E06EE54B342920851538BFA2D /* FMDatabaseAdditions.h in Headers */,
+				A8E81619E45E7EA43CB60EAF6C8BF52B /* FMDatabasePool.h in Headers */,
+				CF6A4CFA39D9AB1E134E385D8F24BAD8 /* FMDatabaseQueue.h in Headers */,
+				F76E38DCB4207FA207BDDE8F5046ACF4 /* FMResultSet.h in Headers */,
+				8BD84B30D89C365AE656FE55D9DBDAAF /* YappFMDB-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +258,7 @@
 			buildPhases = (
 				2E6367BEE7E257FA104C1EA0064EB30E /* Sources */,
 				8A7E84574BCD7FF0FC79B6EAA297EDD8 /* Frameworks */,
-				AE22E3006475E54E6300D7B6F53F4C12 /* Headers */,
+				3B1AE96982AD92F7A4FAA295D2826F42 /* Headers */,
 			);
 			buildRules = (
 			);

@@ -119,9 +119,6 @@ return ret;
     return returnBool;
 }
 
-
-#if SQLITE_VERSION_NUMBER >= 3007017
-
 - (uint32_t)applicationID {
     
     uint32_t r = 0;
@@ -143,34 +140,6 @@ return ret;
     [rs next];
     [rs close];
 }
-
-
-#if TARGET_OS_MAC && !TARGET_OS_IPHONE
-- (NSString*)applicationIDString {
-    NSString *s = NSFileTypeForHFSTypeCode([self applicationID]);
-    
-    assert([s length] == 6);
-    
-    s = [s substringWithRange:NSMakeRange(1, 4)];
-    
-    
-    return s;
-    
-}
-
-- (void)setApplicationIDString:(NSString*)s {
-    
-    if ([s length] != 4) {
-        NSLog(@"setApplicationIDString: string passed is not exactly 4 chars long. (was %ld)", [s length]);
-    }
-    
-    [self setApplicationID:NSHFSTypeCodeFromFileType([NSString stringWithFormat:@"'%@'", s])];
-}
-
-
-#endif
-
-#endif
 
 - (uint32_t)userVersion {
     uint32_t r = 0;
