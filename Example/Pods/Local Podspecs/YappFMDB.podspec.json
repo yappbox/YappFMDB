@@ -16,6 +16,8 @@
     "ios": "8.0"
   },
   "requires_arc": true,
-  "libraries": "sqlite3",
+  "pod_target_xcconfig": {
+    "OTHER_LDFLAGS": "-lsqlite3"
+  },
   "source_files": "Pod/Classes/**/*"
 }
